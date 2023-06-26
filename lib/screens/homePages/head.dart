@@ -1,9 +1,14 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:app/provider/head_provider.dart';
 import 'package:app/provider/main_data_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Head extends StatefulWidget {
+  List<dynamic>? placemarks;
+
+  Head({super.key, required this.placemarks});
   @override
   State<StatefulWidget> createState() {
     return _HeadState();
@@ -21,16 +26,20 @@ class _HeadState extends State<Head> {
         Container(
           height: 50,
           color: Colors.blue[100],
-          child: const Row(
+          child: Row(
             children: [
-              Icon(
+              const Icon(
                 Icons.location_on_outlined,
                 size: 30,
                 color: Colors.white,
               ),
               Text(
-                "Delivery to Satyabrata-Bhubane...756054",
-                style: TextStyle(fontSize: 14, color: Colors.white),
+                "${widget.placemarks?[0].locality},${widget.placemarks?[0].country}",
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+                ),
               )
             ],
           ),
