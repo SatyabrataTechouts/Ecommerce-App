@@ -33,7 +33,7 @@ class Profile extends StatelessWidget {
                   value: "Satya@gmail.com",
                 ),
                 CustumRow(
-                  title: "DoB",
+                  title: "DOB",
                   value: "09/04/2000",
                 ),
               ],

@@ -2,7 +2,7 @@ import 'package:app/provider/cart_data.dart';
 import 'package:app/provider/head_provider.dart';
 import 'package:app/provider/main_data_provider.dart';
 import 'package:app/provider/single_page.dart';
-import 'package:app/screens/components/navigation/bottom_navigation.dart';
+import 'package:app/screens/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: BottomNavigation(),
+      home: LoginPage(),
     );
   }
 }
