@@ -1,5 +1,5 @@
+import 'package:app/components/components/custum_button.dart';
 import 'package:app/provider/single_page.dart';
-import 'package:app/screens/components/custum_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
