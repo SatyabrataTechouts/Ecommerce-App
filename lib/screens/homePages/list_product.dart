@@ -86,12 +86,10 @@ class _ListProductState extends State<ListProduct> {
                                 ),
                                 Container(
                                   width: 120,
-                                  child: Expanded(
-                                    child: Text(
-                                      data[index].title,
-                                      style: const TextStyle(
-                                        color: Colors.black,
-                                      ),
+                                  child: Text(
+                                    data[index].title,
+                                    style: const TextStyle(
+                                      color: Colors.black,
                                     ),
                                   ),
                                 ),
