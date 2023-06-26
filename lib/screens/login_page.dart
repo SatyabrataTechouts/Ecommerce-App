@@ -1,6 +1,7 @@
 import 'package:app/components/components/custum_button.dart';
 import 'package:app/components/components/navigation/bottom_navigation.dart';
 import 'package:app/components/custum_input.dart';
+import 'package:app/screens/Sign_up.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -62,6 +63,22 @@ class LoginPage extends StatelessWidget {
                       },
                       height: 45,
                       width: 90,
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(
+                        vertical: 12,
+                      ),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignUp()));
+                        },
+                        child: const Text(
+                          "dont have Account Signup?",
+                        ),
+                      ),
                     )
                   ],
                 ),
