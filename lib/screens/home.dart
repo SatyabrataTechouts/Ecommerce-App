@@ -54,9 +54,9 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     final prov = context.watch<MainDataProvider>();
     final headProv = context.watch<HeadProvider>();
-    print("=====${prov.mappedData}");
-    print('head data=${headProv.product}');
-    print("postion===,$placemarks");
+    // print("=====${prov.mappedData}");
+    // print('head data=${headProv.product}');
+    // print("postion===,$placemarks");
     // TODO: implement build
     return Scaffold(
       body: Material(

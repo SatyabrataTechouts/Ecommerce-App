@@ -2,11 +2,20 @@ import 'package:app/provider/cart_data.dart';
 import 'package:app/provider/head_provider.dart';
 import 'package:app/provider/main_data_provider.dart';
 import 'package:app/provider/single_page.dart';
+import 'package:app/provider/user_prov.dart';
 import 'package:app/screens/login_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    name: 'e-app-7afff',
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     MultiProvider(
       providers: [
@@ -21,6 +30,9 @@ void main() {
         ),
         ChangeNotifierProvider<CartDataProvider>(
           create: (_) => CartDataProvider(),
+        ),
+        ChangeNotifierProvider<UserProv>(
+          create: (_) => UserProv(),
         ),
       ],
       child: const MyApp(),

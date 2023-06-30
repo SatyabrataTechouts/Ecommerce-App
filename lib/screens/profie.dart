@@ -1,7 +1,23 @@
+import 'package:app/provider/user_prov.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class Profile extends StatelessWidget {
+class Profile extends StatefulWidget {
   @override
+  State<Profile> createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
+  User? user;
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    user = context.watch<UserProv>().loginUser;
+    print('====$user');
+  }
+
   Widget build(BuildContext context) {
     return Material(
       child: Column(
@@ -18,23 +34,19 @@ class Profile extends StatelessWidget {
             margin: const EdgeInsets.symmetric(
               vertical: 30,
             ),
-            child: const Column(
+            child: Column(
               children: [
                 CustumRow(
                   title: "Name",
-                  value: "Satyabrata Barik",
+                  value: user?.displayName ?? '',
                 ),
                 CustumRow(
                   title: "Phone",
-                  value: "7873537019",
+                  value: user?.phoneNumber ?? '',
                 ),
                 CustumRow(
                   title: "Email",
-                  value: "Satya@gmail.com",
-                ),
-                CustumRow(
-                  title: "DOB",
-                  value: "09/04/2000",
+                  value: user?.email ?? '',
                 ),
               ],
             ),
@@ -52,11 +64,14 @@ class CustumRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(18.0),
-      child: Material(
+    return Material(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 50,
+          vertical: 23,
+        ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               title,

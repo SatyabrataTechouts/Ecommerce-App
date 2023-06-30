@@ -1,4 +1,3 @@
-import 'package:app/model/api_model.dart';
 import 'package:flutter/material.dart';
 
 class SinglePage with ChangeNotifier {
@@ -7,5 +6,6 @@ class SinglePage with ChangeNotifier {
     // singleProduct.clear();
     print("selected$selectedData");
     singleProduct = selectedData;
+    notifyListeners();
   }
 }

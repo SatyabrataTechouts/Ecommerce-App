@@ -27,40 +27,43 @@ class _BottomNavigationState extends State<BottomNavigation> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
+        automaticallyImplyLeading: false,
       ),
       body: _pages.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-                color: Colors.black,
-              ),
-              label: 'Home',
-              backgroundColor: Colors.white,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: Colors.black,
             ),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.shopping_cart,
-                  color: Colors.black,
-                ),
-                label: 'Cart',
-                backgroundColor: Colors.white),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
-                color: Colors.black,
-              ),
-              label: 'Profile',
-              backgroundColor: Colors.white,
+            label: 'Home',
+            backgroundColor: Colors.white,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.shopping_cart,
+              color: Colors.black,
             ),
-          ],
-          type: BottomNavigationBarType.shifting,
-          currentIndex: _selectedIndex,
-          selectedItemColor: Colors.blue,
-          iconSize: 35,
-          onTap: _onItemTapped,
-          elevation: 5),
+            label: 'Cart',
+            backgroundColor: Colors.white,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person,
+              color: Colors.black,
+            ),
+            label: 'Profile',
+            backgroundColor: Colors.white,
+          ),
+        ],
+        type: BottomNavigationBarType.shifting,
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.blue,
+        iconSize: 35,
+        onTap: _onItemTapped,
+        elevation: 5,
+      ),
     );
   }
 }
